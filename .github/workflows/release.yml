@@ -23,4 +23,4 @@ jobs:
           NOTES: ${{ steps.tag_version.outputs.changelog }}
           TAG: ${{ steps.tag_version.outputs.new_tag }}
           TITLE: Release ${{ steps.tag_version.outputs.new_tag }}
-        run: gh release create $TAG -t $TITLE -n $NOTES
+        run: gh release create "$TAG" -t "$TITLE" -n "$NOTES"
