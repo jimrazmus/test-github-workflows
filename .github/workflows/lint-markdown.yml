@@ -1,0 +1,13 @@
+name: Lint Markdown
+
+on: pull_request
+
+jobs:
+  lint-markdown:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Lint Markdown
+        uses: nosborn/github-action-markdown-cli@v3.1.0
+        with:
+          files: .
