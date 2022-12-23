@@ -1,0 +1,14 @@
+name: Push
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '.github/**'
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: hmarr/debug-action@v2
