@@ -1,14 +1,20 @@
 name: Release
 
 on:
-  push:
+  pull_request:
     branches:
       - master
+    types:
+      - closed
+    paths-ignore:
+      - '.github/**'
 
 jobs:
   release:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
+      - uses: hmarr/debug-action@v2
       - uses: actions/checkout@v3
       - name: Bump version and push tag
         id: tag_version
