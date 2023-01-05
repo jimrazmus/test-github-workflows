@@ -2,3 +2,6 @@
 - name: Test
   ansible.builtin.debug:
     msg: "Testing"
+
+- debug:
+    msg: "This should fail"
