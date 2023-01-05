@@ -17,4 +17,4 @@ jobs:
       - name: Run the Linter
         uses: docker://cytopia/ansible-lint:latest
         with:
-          args: -vvv
+          args: -v
