@@ -10,7 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Run the linter
+      - name: Output Linter Version
+        uses: docker://cytopia/ansible-lint:latest
+        with:
+          args: --version
+      - name: Run the Linter
         uses: docker://cytopia/ansible-lint:latest
         with:
           args: -vvv ${{ github.workspace }}
